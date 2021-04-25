@@ -41,7 +41,6 @@ function App() {
 
         <input type="number" placeholder='Elec. Acc.' onChange={e => setElecAcc(e.target.value)} /><br />
 
-        <input type="number" placeholder='N.C.B Amount' onChange={e => setNCBAmount(e.target.value)} /><br />
 
         <input type="number" placeholder='N.C.B Rate' onChange={e => setNCBRate(e.target.value)} /><br />
         <label htmlFor="Loading/Discount">Loading/Discount</label>
@@ -54,11 +53,6 @@ function App() {
           <option >Discount</option>
         </select>
         <br />
-        <input
-          type="number"
-          placeholder='Loading/Discount amount'
-          onChange={e => setDisAmt(e.target.value)}
-        /><br />
 
         <input type="number" placeholder='Loading/Discount Rate'
           onChange={e => setDisRate(e.target.value)}
