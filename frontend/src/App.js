@@ -11,11 +11,15 @@ function App() {
   const [disRate, setDisRate] = useState('');
   const [allData, setAllData] = useState([])
   const [loading, setLoading] = useState(false);
+  const [pass, setPass] = useState('');
+  const [driver, setDriver] = useState('');
+  const [pa, setPa] = useState('');
+  const [tpa, setTpa] = useState('');
   const [error, setError] = useState('');
   const getData = async () => {
     try {
       setLoading(true);
-      const { data } = await Axios.post('http://localhost:5000', { year, amt, elecAcc, disAmt, disRate, NCBAmount, NCBRate, loadingDiscount })
+      const { data } = await Axios.post('http://localhost:5000', { year, amt, elecAcc, disRate, NCBRate, loadingDiscount })
       setLoading(false);
       setAllData(data);
     } catch (err) {
@@ -57,6 +61,18 @@ function App() {
         <input type="number" placeholder='Loading/Discount Rate'
           onChange={e => setDisRate(e.target.value)}
         /><br />
+        {/* <input type="number" placeholder='T.P.A'
+          onChange={e => setTpa(e.target.value)} />
+        <br /> */}
+        <input type="number" placeholder='P.A'
+          onChange={e => setPa(e.target.value)} />
+        <br />
+        <input type="number" placeholder='Driver'
+          onChange={e => setDriver(e.target.value)} />
+        <br />
+        <input type="number" placeholder='Pass'
+          onChange={e => setPass(e.target.value)} />
+        <br />
 
         <button type='submit' onClick={getData}>Proceed</button> <br />
         {loading ? <p>Loading</p> : error ? <p>{error}</p> :
